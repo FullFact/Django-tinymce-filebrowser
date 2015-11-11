@@ -16,7 +16,7 @@ from mce_filebrowser.conf import    LOCAL_MCE_FILEBROWSER_JQUERY,\
                                     LOCAL_MCE_FILEBROWSER_DECORATOR_METHOD
 
 def custom_decorator(*args, **kwargs):
-    m = __import__(LOCAL_MCE_FILEBROWSER_DECORATOR_MODULE, globals(), locals(), [LOCAL_MCE_FILEBROWSER_DECORATOR_METHOD], -1)
+    m = __import__(LOCAL_MCE_FILEBROWSER_DECORATOR_MODULE, globals(), locals(), [LOCAL_MCE_FILEBROWSER_DECORATOR_METHOD], 0)
     #m = __import__ ()
     func = getattr(m,LOCAL_MCE_FILEBROWSER_DECORATOR_METHOD)
     return func(*args, **kwargs)
