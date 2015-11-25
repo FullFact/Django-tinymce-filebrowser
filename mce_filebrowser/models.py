@@ -7,7 +7,7 @@ from mce_filebrowser.conf import   LOCAL_MCE_FILEBROWSER_UPLOADDIR,LOCAL_MCE_FIL
 
 def content_file_name(instance, filename):
     if LOCAL_MCE_FILEBROWSER_PERUSER == True:
-        return "%s/%s/%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR,'user-%s' % str(instance.user_id), datetime.datetime.now().strftime("%Y/%m/%d"), filename)
+        return "%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR, filename)
     else:
         return "%s/%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR, datetime.datetime.now().strftime("%Y/%m/%d"), filename)
 
