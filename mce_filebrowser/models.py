@@ -6,11 +6,7 @@ from django.utils.translation import ugettext as _
 from mce_filebrowser.conf import   LOCAL_MCE_FILEBROWSER_UPLOADDIR,LOCAL_MCE_FILEBROWSER_PERUSER
 
 def content_file_name(instance, filename):
-    if LOCAL_MCE_FILEBROWSER_PERUSER == True:
-        return "%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR, filename)
-    else:
-        return "%s/%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR, datetime.datetime.now().strftime("%Y/%m/%d"), filename)
-
+    return "%s/%s" %(LOCAL_MCE_FILEBROWSER_UPLOADDIR, filename)
 
 
 class FileBrowserFile(models.Model):
