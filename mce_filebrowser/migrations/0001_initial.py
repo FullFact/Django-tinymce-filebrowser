@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('file_type', self.gf('django.db.models.fields.CharField')(max_length=3)),
             ('uploaded_file', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
             ('create_date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-            ('tags', self.gf('taggit.managers.TaggableManager')({through='taggit.TaggedItem', verbose_name='Tags', help_text="A comma-separated list of tags", to='taggit.Tag'),
+            ('tags', self.gf('taggit.managers.TaggableManager')(through='taggit.TaggedItem', verbose_name="Tags", help_text="A comma-separated list of tags", to='taggit.Tag'),
         ))
         db.send_create_signal(u'mce_filebrowser', ['FileBrowserFile'])
 
