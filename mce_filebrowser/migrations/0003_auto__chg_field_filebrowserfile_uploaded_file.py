@@ -24,7 +24,8 @@ class Migration(SchemaMigration):
             'file_type': ('django.db.models.fields.CharField', [], {'max_length': '3'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'uploaded_file': ('django.db.models.fields.files.FileField', [], {'max_length': '300'}),
-            'user_id': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'})
+            'user_id': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'tags': ('taggit.managers.TaggableManager', [], {through: 'taggit.TaggedItem', verbose_name: 'Tags', help_text: 'A comma-separated list of tags.', to: 'taggit.Tag'}),
         }
     }
 
