@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True)),
                 ('file_type', models.CharField(max_length=3)),
-                ('uploaded_file', models.FileField(max_length=100))
+                ('uploaded_file', models.FileField(max_length=100)),
                 ('create_date', models.DateTimeField(auto_now_add=True, blank=True)),
                 ('tags', TaggableManager(through='taggit.TaggedItem', verbose_name='Tags', help_text='A comma-separated list of tags.', to='taggit.Tag')),
             ]
