@@ -7,6 +7,10 @@ from taggit.managers import TaggableManager
 
 
 class Migration(migrations.Migration):
+    dependencies = [
+        ('taggit', '0003_auto__chg_field_filebrowserfile_uploaded_file'),
+    ]
+    
     operations = [
         migrations.AddField(
             model_name='file_browser_file',

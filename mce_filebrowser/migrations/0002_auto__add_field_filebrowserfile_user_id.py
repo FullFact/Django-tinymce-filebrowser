@@ -7,6 +7,10 @@ from taggit.managers import TaggableManager
 
 
 class Migration(migrations.Migration):
+
+    dependencies = [
+        ('taggit', '0001_initial'),
+    ]
     operations = []
 #     def forwards(self, orm):
 #         # Adding field 'FileBrowserFile.user_id'
