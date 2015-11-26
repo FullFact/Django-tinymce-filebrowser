@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+# from south.db import db
+# from south.v2 import SchemaMigration
+from django.db import models, migrations
+from taggit.managers import TaggableManager
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
     operations = []
 #     def forwards(self, orm):
 #         # Adding field 'FileBrowserFile.user_id'
