@@ -1,12 +1,12 @@
-# # -*- coding: utf-8 -*-
-# import datetime
-# from south.db import db
-# from south.v2 import SchemaMigration
-# from django.db import models
+# -*- coding: utf-8 -*-
+import datetime
+from south.db import db
+from south.v2 import SchemaMigration
+from django.db import models
 
 
-# class Migration(SchemaMigration):
-
+class Migration(SchemaMigration):
+    operations = []
 #     def forwards(self, orm):
 #         # Adding field 'FileBrowserFile.user_id'
 #         db.add_column(u'mce_filebrowser_filebrowserfile', 'user_id',
