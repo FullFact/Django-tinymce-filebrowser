@@ -9,7 +9,7 @@ from taggit.managers import TaggableManager
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('taggit', '0001_initial'),
+        ('mce_filebrowser', '0001_initial'),
     ]
     operations = []
 #     def forwards(self, orm):
