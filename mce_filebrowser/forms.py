@@ -7,4 +7,4 @@ class FileUploadForm(forms.ModelForm):
     """ File/Image Upload form """
     class Meta:
         model = FileBrowserFile
-        fields = ('uploaded_file', 'tags')
+        fields = ('uploaded_file', )
