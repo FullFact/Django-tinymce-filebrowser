@@ -69,3 +69,12 @@ div.panel {
     border: 1px solid #B8B8B8;
 }
 
+#search-button {
+    border: 1px solid #B8B8B8;
+}
+
+#search-button:active {
+    background: #999999;
+}
+
+

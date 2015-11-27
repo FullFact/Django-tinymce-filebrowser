@@ -129,7 +129,7 @@
               <div><!-- DIV needed for valid HTML -->
                 <label for="searchbar"><img src="{% static "admin/img/icon_searchbox.png" %}" alt="Search" /></label>
                 <input type="text" size="40" name="q" value="{{ query.q }}" id="searchbar" />
-                <input type="submit" value="{% trans 'Search' %}" />
+                <input id="search-button" type="submit" value="{% trans 'Search' %}" />
                 {% if query.filter_type %}<input type="hidden" name="filter_type" value="{{ query.filter_type }}" />{% endif %}
                 {% if query.filter_date %}<input type="hidden" name="filter_date" value="{{ query.filter_date }}" />{% endif %}
                 {% if query.o %}<input type="hidden" name="o" value="{{ query.o }}" />{% endif %}
@@ -144,7 +144,7 @@
                 {% endifequal %}
               </div>
             </form></div>
-            
+
             {% if files %}
               <ul class="images_list">
                 {% for img in files %}
