@@ -12,9 +12,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='file_browser_file',
-            name='tags',
-            field=TaggableManager(through='taggit.TaggedItem', verbose_name='Tags', help_text='A comma-separated list of tags.', to='taggit.Tag'),
-        ),
+        # migrations.AddField(
+        #     model_name='FileBrowserFile',
+        #     name='tags',
+        #     field=TaggableManager(through='taggit.TaggedItem', verbose_name='Tags', help_text='A comma-separated list of tags.', to='taggit.Tag'),
+        # ),
     ]
