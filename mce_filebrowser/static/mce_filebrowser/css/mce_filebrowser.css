@@ -64,3 +64,8 @@ div.panel {
 	background: #FF6466;
 	color: white; 
 }
+
+#searchbar {
+    border: 1px solid #B8B8B8;
+}
+
