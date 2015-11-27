@@ -4,6 +4,7 @@ import datetime
 # from south.v2 import SchemaMigration
 from django.db import models, migrations
 from taggit.managers import TaggableManager
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
