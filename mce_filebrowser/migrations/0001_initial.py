@@ -35,7 +35,10 @@ class Migration(migrations.Migration):
     # }
 
     # complete_apps = ['mce_filebrowser']
-
+    dependencies = [
+        ('taggit', '0001_initial'),
+    ]
+    
     operations = [
         migrations.CreateModel(
             name='FileBrowserFile',

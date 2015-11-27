@@ -10,8 +10,16 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('mce_filebrowser', '0001_initial'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
-    operations = []
+
+    operations = [
+        migrations.AddField(
+            model_name='FileBrowserFile',
+            name='user_id',
+            field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
+        ),
+    ]
 #     def forwards(self, orm):
 #         # Adding field 'FileBrowserFile.user_id'
 #         db.add_column(u'mce_filebrowser_filebrowserfile', 'user_id',
