@@ -34,20 +34,24 @@ def filebrowser(request, file_type):
 
 
     files = FileBrowserFile.objects.filter(file_type=file_type)
+
     if LOCAL_MCE_FILEBROWSER_PERUSER == True and request.user and request.user.id:
         files = files.filter(user_id=request.user.id)
 
     if request.POST:
-        upload_form = FileUploadForm(request.POST, request.FILES)
-        upload_tab_active = True
-        
-        if upload_form.is_valid():
-            uploaded_file = upload_form.save(commit=False)
-            uploaded_file.file_type = file_type
-            if LOCAL_MCE_FILEBROWSER_PERUSER == True and request.user and request.user.id:
-                uploaded_file.user_id = request.user.id
-            uploaded_file.save()
-    
+        if request.POST['q'] == '':
+            upload_form = FileUploadForm(request.POST, request.FILES)
+            upload_tab_active = True
+
+            if upload_form.is_valid():
+                uploaded_file = upload_form.save(commit=False)
+                uploaded_file.file_type = file_type
+                if LOCAL_MCE_FILEBROWSER_PERUSER == True and request.user and request.user.id:
+                    uploaded_file.user_id = request.user.id
+                uploaded_file.save()
+        else:
+            files = files.filter(uploaded_file__contains=request.POST['q'])
+
     data = {
         'files': files,
         'upload_form': upload_form,
@@ -59,7 +63,7 @@ def filebrowser(request, file_type):
         'LOCAL_MCE_FILEBROWSER_UPLOADDIR': LOCAL_MCE_FILEBROWSER_UPLOADDIR,
         'LOCAL_MCE_FILEBROWSER_THEMECSS': LOCAL_MCE_FILEBROWSER_THEMECSS
     }
-    
+
     return render_to_response(template, data, RequestContext(request))
 
 
