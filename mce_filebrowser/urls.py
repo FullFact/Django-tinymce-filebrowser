@@ -1,9 +1,9 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from mce_filebrowser import views
 
 
-urlpatterns = patterns('',
+urlpatterns = ['',
     url(r'^image/$', 
         views.filebrowser, 
         {'file_type': 'img'},
@@ -34,4 +34,4 @@ urlpatterns = patterns('',
         {'file_type': 'doc'},
         name='mce-filebrowser-remove-document'
     )
-)
+]
