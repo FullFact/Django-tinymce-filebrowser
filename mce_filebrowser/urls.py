@@ -3,7 +3,7 @@ from django.conf.urls import url
 from mce_filebrowser import views
 
 
-urlpatterns = ['',
+urlpatterns = [
     url(r'^image/$', 
         views.filebrowser, 
         {'file_type': 'img'},
