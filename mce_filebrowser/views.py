@@ -51,7 +51,7 @@ def filebrowser(request, file_type):
                 uploaded_file.save()
         else:
             files = files.filter(uploaded_file__contains=request.POST['q'])
-
+    import pdb;pdb.set_trace()
     data = {
         'files': files,
         'upload_form': upload_form,
