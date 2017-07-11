@@ -51,7 +51,7 @@ def filebrowser(request, file_type):
                 uploaded_file.save()
         else:
             files = files.filter(uploaded_file__contains=request.POST['q'])
-    import pdb;pdb.set_trace()
+
     data = {
         'files': files,
         'upload_form': upload_form,
@@ -64,7 +64,8 @@ def filebrowser(request, file_type):
         'LOCAL_MCE_FILEBROWSER_THEMECSS': LOCAL_MCE_FILEBROWSER_THEMECSS
     }
 
-    return render_to_response(template, data, RequestContext(request))
+    # return render_to_response(template, data, RequestContext(request))
+    return render_to_response(template, RequestContext(request))
 
 
 @custom_decorator
