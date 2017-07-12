@@ -1,6 +1,6 @@
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 
@@ -52,7 +52,7 @@ def filebrowser(request, file_type):
         else:
             files = files.filter(uploaded_file__contains=request.POST['q'])
 
-    data = {
+    context = {
         'files': files,
         'upload_form': upload_form,
         'uploaded_file': uploaded_file,
@@ -64,9 +64,7 @@ def filebrowser(request, file_type):
         'LOCAL_MCE_FILEBROWSER_THEMECSS': LOCAL_MCE_FILEBROWSER_THEMECSS
     }
 
-    context = dict(data.items() + request.items())
-
-    return render_to_response(template, context)
+    return render(request, template, context)
 
 
 @custom_decorator
