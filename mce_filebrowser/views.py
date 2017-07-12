@@ -64,8 +64,9 @@ def filebrowser(request, file_type):
         'LOCAL_MCE_FILEBROWSER_THEMECSS': LOCAL_MCE_FILEBROWSER_THEMECSS
     }
 
-    # return render_to_response(template, data, RequestContext(request))
-    return render_to_response(template, RequestContext(request))
+    context = dict(data.items() + request.items())
+
+    return render_to_response(template, context)
 
 
 @custom_decorator
