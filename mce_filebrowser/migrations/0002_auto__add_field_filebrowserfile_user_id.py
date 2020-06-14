@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='FileBrowserFile',
             name='user_id',
-            field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(on_delete=models.CASCADE,
+                                    to=settings.AUTH_USER_MODEL),
         ),
     ]
 #     def forwards(self, orm):
